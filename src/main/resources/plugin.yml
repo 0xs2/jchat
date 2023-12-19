@@ -1,0 +1,38 @@
+name: JChat
+description: Basic Chat plugin for poseidon.
+main: dev.oxs.jchat.JChat
+version: 1.0.0
+authors:
+  - oxs
+depend: []
+commands:
+  jchat:
+    description: Show the JChat menu
+    usage: /jchat
+    aliases: ["jc"]
+  jchat-stats:
+    description: Shows JChat's statistics
+    usage: /jchat-stats
+    aliases: ["jcstats", "jcs"]
+  jchat-jcmute:
+    description: Mutes a player
+    usage: /jchat-jcmute
+    aliases: ["jcm", "jcmute"]
+  jchat-jcunmute:
+    description: Unmutes a player
+    usage: /jchat-jcunmute
+    aliases: ["jcum", "jcunmute"]
+
+permissions:
+  jchat.jchat:
+    description: Show the JChat menu
+    default: op
+  jchat.jcstats:
+    description: Shows JChat's statistics
+    default: op
+  jchat.jcmute:
+    description: Mute a player
+    default: op
+  jchat.jcunmute:
+    description: Unmute a player
+    default: op

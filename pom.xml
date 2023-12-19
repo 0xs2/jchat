@@ -1,0 +1,60 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.oxs</groupId>
+    <artifactId>jchat</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.googlecode.maven-download-plugin</groupId>
+                <artifactId>download-maven-plugin</artifactId>
+                <version>1.7.0</version>
+                <executions>
+                    <!-- Download Project-Poseidon-Latest.jar -->
+                    <execution>
+                        <id>download-poseidon-jar</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>https://jenkins.glass-launcher.net/job/Project-Poseidon/lastSuccessfulBuild/artifact/target/project-poseidon-1.1.8.jar</url>
+                            <outputDirectory>${basedir}/../libs</outputDirectory>
+                            <outputFileName>Project-Poseidon-1.1.8.jar</outputFileName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> <!-- Update to the latest version -->
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.legacyminecraft.poseidon</groupId>
+            <artifactId>poseidon-craftbukkit</artifactId>
+            <version>1.1.8</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/libs/Project-Poseidon-1.1.8.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20231013</version>
+        </dependency>
+    </dependencies>
+
+
+</project>
